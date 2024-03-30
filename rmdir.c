@@ -1,5 +1,5 @@
 /*
-CHAMADA RM - remove arquivo
+CHAMADA RMDIR - Remove um diretório, caso o mesmo esteja vazio.
 */
 
 #include <stdio.h> // entrada e saída 
@@ -16,9 +16,10 @@ int main(int argc, char *argv[]){
         exit(EXIT_FAILURE);
     }
 
-    // Remove o arquivo do segundo argumento
-    if (remove(argv[1]) == 0) { // se o retorno da função remove() for igual a 0, foi bem sucessido
-        printf("Arquivo %s removido com sucesso!!!.\n", argv[1]);
+    // Remove o arquivo do segundo argumento (diretório) - mas apenas se estiver vazio
+    // verificar se o diretório tá vazio
+    if (rmdir(argv[1]) == 0) { // se o retorno da função remove() for igual a 0, foi bem sucessido
+        printf("Diretório %s removido com sucesso!!!.\n", argv[1]);
         return EXIT_SUCCESS;
     } else {
         perror("Erro ao remover arquivo");

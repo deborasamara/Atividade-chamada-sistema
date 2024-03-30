@@ -2,13 +2,13 @@
 CHAMADA UPTIME - Mostra a quanto tempo o computador está ligado
 */
 
-#include <time.h>
+#include <sys/sysinfo.h>
 
-void uptime(){ // programa para mostrar quanto tempo o pc está ligado
-
-
-}
-int main(){ // chamar a função
-    uptime();
+int main (void)
+{
+    struct sysinfo info;
+    sysinfo(&info);
+    printf("Uptime (tempo em segundos desde que foi iniciado ao tempo que foi chamada a função) = %ld",info.uptime);
+    printf(" segundos\n");
     return 0;
 }
