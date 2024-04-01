@@ -1,4 +1,6 @@
-
+/*
+mkdir Cria um novo diretório.
+*/
 #include <stdio.h> // entrada e saída em c
 #include <stdlib.h> // funções como alocação de memória, conversão de números etc
 

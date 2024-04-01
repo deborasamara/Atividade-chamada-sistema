@@ -15,9 +15,6 @@ int main(int argc, char *argv[]){
         fprintf(stderr, "Comando esperado: %s <arquivo>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
-
-    // Remove o arquivo do segundo argumento (diretório) - mas apenas se estiver vazio
-    // verificar se o diretório tá vazio
     if (rmdir(argv[1]) == 0) { // se o retorno da função remove() for igual a 0, foi bem sucessido
         printf("Diretório %s removido com sucesso!!!.\n", argv[1]);
         return EXIT_SUCCESS;
